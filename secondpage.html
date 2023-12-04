@@ -4,15 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="javascript.js" defer></script>
     <link rel="stylesheet" type="text/css" href="style.css" />    
     <link href="style.css">    
 
 </head>
-<body>
+<body onload="createButton()">
+    <script>
+        function nextChange(){
+            window.open("thirdpage.html", "_self");
+        }
+        function previousChange(){
+            window.open("firstpage.html", "_self");
+        }
+        function createButton(){
+        var button = document.createElement("button");
+		button.innerHTML = "next";
+	    var list = document.getElementById("next");
+        button.addEventListener("click", this.nextChange)
+	    list.appendChild(button);
+
+        var button2 = document.createElement("button");
+		button2.innerHTML = "previous";
+	    var list = document.getElementById("previous");
+        button2.addEventListener("click", this.previousChange)
+	    list.appendChild(button2);
+        }
+        function change_colors(element){
+            document.body.style.backgroundColor = "green";
+        }
+    </script>
     <h1>2013-2018</h1>
     <img src="https://i.imgur.com/kwkbCRV.jpg">
    <h3> We then lived in Connecticut for 3 more years, and in 2015, near the end of my third grade year, we moved to Kansas.
     I lived there for about a year, and then, at the start of fourth grade, we moved again to Fishers. We moved to Sunlake Apartments.
+    <h4 onclick = change_colors(this)>Click here to change background to green!</h4>
 
    </h3>
    <div>
@@ -22,6 +48,12 @@
 <div class="rightallign">
     <a href="thirdpage.html"><img src="https://upload.wikimedia.org/wikipedia/commons/d/d7/Arrow_right.svg" style="text-align: right;"></a>
     </div>
+    </div>
+    <div id = "next" class="rightallign">
+
+    </div>
+    <div id = "previous" class="leftallign">
+
     </div>
    <br>
    <h2><a href="firstpage.html">2007-2012</a></h2>
