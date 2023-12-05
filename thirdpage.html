@@ -10,6 +10,32 @@
 </head>
 <body onload="createButton1()">
     <script>
+        function updateFeedback(){
+            var q1 = prompt("Was the website easy to use?")
+            var q2 = prompt("Is the content good?")
+            var q3 = prompt("Suggestions?")
+
+            var label1 = document.createElement("label");
+		    label1.innerHTML = "Was the website easy to use?  " + q1;
+	        var list = document.getElementById("feedback");
+	        list.appendChild(label1);
+            
+            var br1 = document.createElement("br");
+            list.appendChild(br1);
+
+            var label2 = document.createElement("label");
+		    label2.innerHTML = "Is the content good?  " + q2;
+	        var list = document.getElementById("feedback");
+	        list.appendChild(label2);
+
+            var br2 = document.createElement("br");
+            list.appendChild(br2);
+
+            var label3 = document.createElement("label");
+		    label3.innerHTML = "Suggestions?"   + q3;
+	        var list = document.getElementById("feedback");
+	        list.appendChild(label3);
+        }
         document.body.addEventListener("keyup", changeColor);
         
         function changeColor(event){    
@@ -19,21 +45,39 @@
             window.open("secondpage.html", "_self");
         }
         function createButton1(){
-        var button3 = document.createElement("button");
-		button3.innerHTML = "previous";
-	    var list = document.getElementById("previous");
-        button3.addEventListener("click", this.lastPage)
-	    list.appendChild(button3);
+            var h1 = document.createElement("h1");
+		    h1.innerHTML = "2019-Present";
+	        var list = document.getElementById("myTitle");
+	        list.appendChild(h1);
+
+            var img1 = document.createElement("img");
+		    img1.setAttribute("src", "https://i.imgur.com/L83lOII.jpg");
+	        var list = document.getElementById("myTitle");
+	        list.appendChild(img1);
+
+            var button3 = document.createElement("button");
+		    button3.innerHTML = "previous";
+	        var list = document.getElementById("previous");
+            button3.addEventListener("click", this.lastPage)
+	        list.appendChild(button3);
         }
     </script>
-    <h1>2019-Present</h1>
-    <img src="https://i.imgur.com/L83lOII.jpg">
+    <div id = "myTitle">
+
+    </div>
     <h3>After the pandemic started, we moved into a house in Tanglewood. From then to now, we haven't moved yet.</h3>
     <h4>Click the down arrow key to change color to yellow!</h4>
     <a href="secondpage.html"><img src="https://upload.wikimedia.org/wikipedia/commons/1/12/Arrow_left.svg"></a>
     <br>
     <div id = "previous" class="leftallign">
      <br>   
+     <div>
+        <button onclick="updateFeedback()">Provide feedback</button>
+     </div>
+     <br>
+     <div id="feedback">
+    
+     </div>
     <h2><a href="firstpage.html">2007-2012</a></h2>
     <br>
     <h2><a href="secondpage.html">2013-2018</a></h2>
